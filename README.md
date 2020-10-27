@@ -1,10 +1,17 @@
-# chatding!
+# Meme-Beam!
 
-_A simple chat notifier for Twitch streamers without viewers_
+_A shameless fork of Chatding with image sharing capabilities_
 
 ## Preamble
 
-**chatding** is a utility designed for streamers with low or no audience alerting the user with an audible alarm when someone writes in the twitch chat.
+**Meme-Beam** is a utility designed for streamers with low or no audience alerting the user with an audible alarm when someone writes in the twitch chat. To encourage additional audience interaction, viewers will also be able to send images to the streamer to check and subsequently push to their stream, or delete.
+
+## Planned Features
+- A full gui\
+- A passive twitch chat sifter\
+- Android client for single monitor streamers\
+- Image viewer for multi monitor streamers\
+- Remote clients for moderators(?)\
 
 ### Set-up
 
@@ -29,6 +36,6 @@ SOUND_FILE = 'sounds/alert.wav'
 
 ### Behavior
 
-**chatding** plays the alert when it detects a new message in the chat and waits the number of seconds specified in the DELAY variable for a new alert.
+**Meme-Beam** plays the alert when it detects a new message in the chat and waits the number of seconds specified in the DELAY variable for a new alert.
 
 If the chatding window is in foreground no sound will be played (this feature only works on Windows platform).
