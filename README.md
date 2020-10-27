@@ -38,4 +38,4 @@ SOUND_FILE = 'sounds/alert.wav'
 
 **Meme-Beam** plays the alert when it detects a new message in the chat and waits the number of seconds specified in the DELAY variable for a new alert.
 
-If the chatding window is in foreground no sound will be played (this feature only works on Windows platform).
+If the window is in foreground no sound will be played (this feature only works on Windows platform).
