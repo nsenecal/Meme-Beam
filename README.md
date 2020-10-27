@@ -1,4 +1,4 @@
-# Meme-Beam!
+# Meme-Beam
 
 _A shameless fork of Chatding with image sharing capabilities_
 
@@ -7,11 +7,11 @@ _A shameless fork of Chatding with image sharing capabilities_
 **Meme-Beam** is a utility designed for streamers with low or no audience alerting the user with an audible alarm when someone writes in the twitch chat. To encourage additional audience interaction, viewers will also be able to send images to the streamer to check and subsequently push to their stream, or delete.
 
 ## Planned Features
-- A full gui\
-- A passive twitch chat sifter\
-- Android client for single monitor streamers\
-- Image viewer for multi monitor streamers\
-- Remote clients for moderators(?)\
+- A full gui
+- A passive twitch chat sifter
+- Android client for single monitor streamers
+- Image viewer for multi monitor streamers
+- Remote clients for moderators(?)
 
 ### Set-up
 
