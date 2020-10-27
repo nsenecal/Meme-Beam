@@ -7,9 +7,9 @@ _A shameless fork of Chatding with image sharing capabilities_
 **Meme-Beam** is a utility designed for streamers with low or no audience alerting the user with an audible alarm when someone writes in the twitch chat. To encourage additional audience interaction, viewers will also be able to send images to the streamer to check and subsequently push to their stream, or delete.
 
 ## Testing
--Follow Set-up below.
--Type !meme in twitch chat, followed by a space and the **image location** of an image. When you paste the image location into an internet browser it should take you straight to the image, not a website.
--Check the images folder within the project folder.
+- Follow Set-up below.
+- Type !meme in twitch chat, followed by a space and the **image location** of an image. When you paste the image location into an internet browser it should take you straight to the image, not a website.
+- Check the images folder within the project folder.
 
 ## Planned Features
 - A full gui
