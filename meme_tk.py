@@ -3,13 +3,15 @@ from config import DELAY, CHANNEL, ALERT_SOUND, ALERT_RUMBLE
 from alerts import sound, rumble
 from common import window
 
-import requests
-import PIL
-from PIL import ImageTk
-import tkinter as tk
-import threading
+#Added modules
+import requests # deals with image downloads
+import PIL #image manipulation
+from PIL import Image, ImageTk
+import tkinter as tk # GUI
+import threading # multithreading
+import os # odd jobs
 
-
+# connect to irc
 sock = socket.socket()
 sock.connect(('irc.chat.twitch.tv', 6667))
 sock.send(f"NICK justinfan0\n".encode('utf-8'))
@@ -17,23 +19,28 @@ sock.send(f"JOIN {CHANNEL}\n".encode('utf-8'))
 
 lastAlert = 0
 
-current = None
-que = []
+current = False # Is an image being previewed?
+que = [] # collection of image links in order as they are requested
 
+
+# Application Class
 class Application(tk.Frame):
-    
+
     def __init__(self, master=None):
         super().__init__(master)
         self.master = master
         self.pack()
         self.create_widgets()
 
-        thread = threading.Thread(target=self.loop)
+        thread = threading.Thread(target=self.loop) # Alert Lopp
         thread.daemon = True
         thread.start()
 
-    def parsechat(self, input):
+        thread2 = threading.Thread(target=self.constant_check) # Loop for checking for images
+        thread2.daemon = True
+        thread2.start()
 
+    def parsechat(self, input):
         resp = input.rstrip().split('\r\n')
         for line in resp:
             if "PRIVMSG" in line:
@@ -45,25 +52,20 @@ class Application(tk.Frame):
                     que.append(str(image))
             print(line)
 
-    def check(self):
+    def constant_check(self): # Checks for images and when a new image should be previewed
         global current
         global que
-
-        if current is None and len(que) > 0:
+        print(current, que)
+        if current is False and len(que) > 0:
             self.update_preview(que[0])
-            current = que[0]
+            current = True
+        self.after(100,self.constant_check)
 
-    def loop(self):
-
+    def loop(self): # Alert loop
         while True:
-
-            self.check()
-
             resp = sock.recv(2048).decode('utf-8')
-
             if resp.startswith('PING'):
                 sock.send("PONG\n".encode('utf-8'))
-
             elif len(resp) > 0:
                 self.parsechat(resp)
                 global lastAlert
@@ -72,49 +74,49 @@ class Application(tk.Frame):
                     if ALERT_RUMBLE: rumble.alert()
                     lastAlert = time.time()
 
-    def push(self):
+    def push(self): # Image should be written
 
         global current
         global que
-        
+
         file = PIL.Image.open(r"images/staging.png")
         scaled = int(500 * (file.size[1] / file.size[0]))
         file = file.resize((500, scaled), PIL.Image.ANTIALIAS)
         file.save(r"images/meme.png")
         self.update_preview(None)
-        que.remove(que[0])
-        current = None
-        self.check()
+        que.pop(0)
+        current = False
 
-    def reject(self):
-
+    def reject(self): # Image should not exist
         global current
-        global quew
-        
+        global que
+
         self.update_preview(None)
-        que.remove(que[0])
-        current = None
-        self.check()
+        if len(que) > 0:
+            que.pop(0)
+        current = False
 
-    def wipe(self):
-
+    def wipe(self): # Remove current image from stream
         global current
         global que
         self.update_preview(None)
-        current = None
-        self.check()
+        os.remove(r"images/meme.png")
+        current = False
 
-
-    def update_preview(self, link):
+    def update_preview(self, link): # Called every time checker thinks a new image should be previewed
         if link == None:
             self.imgLabel = self.panel
             self.imgLabel.configure(image=None)
             self.imgLabel.image = None
             self.imgLabel.pack()
         else:
-            try: response = requests.get(link).content
-            except:
-                print("U dum")
+            try:
+                response = requests.get(link).content
+            except: #Bugged
+                global current
+                current = False
+                que.pop(0)
+
             else:
                 file = open(r"images/staging.png", "wb")
                 file.write(response)
@@ -129,8 +131,8 @@ class Application(tk.Frame):
                 self.imgLabel.configure(image=img)
                 self.imgLabel.image = img
                 self.imgLabel.pack()
-    
-    def create_widgets(self):
+
+    def create_widgets(self): # Creates buttons and image viewer
         self.panel = tk.Label()
         self.yes = tk.Button(self, text="Yes", fg="green",command=self.push)
         self.yes.pack(side="bottom")
@@ -140,7 +142,7 @@ class Application(tk.Frame):
         self.clear.pack(side="bottom")
 
 
-if __name__ == "__main__":
+if __name__ == "__main__": #Self explanatory
     root = tk.Tk()
     app = Application(master=root)
     app.mainloop()

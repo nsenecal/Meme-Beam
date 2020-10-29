@@ -2,7 +2,7 @@
 CHANNEL = '#generic'
 
 # Wait x seconds to play alert again on new chat message
-DELAY = 120
+DELAY = 10
 
 ### Enable (True) / Disable (False) alert modules
 # ALERT_SOUND plays audible alarm on default sound device
