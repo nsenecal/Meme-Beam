@@ -8,6 +8,7 @@ _A shameless fork of Chatding with image sharing capabilities_
 
 ## Testing
 - Follow Set-up below.
+- Run meme_tk.py
 - Type !meme in twitch chat, followed by a space and the **image location** of an image. When you paste the image location into an internet browser it should take you straight to the image, not a website.
 - Check the images folder within the project folder.
 
@@ -20,7 +21,6 @@ _A shameless fork of Chatding with image sharing capabilities_
 
 ### Unincluded Assets:
 - PIL (Pillow)
-- 
 
 ### Set-up
 
