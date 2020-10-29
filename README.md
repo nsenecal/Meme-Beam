@@ -8,6 +8,7 @@ _A shameless fork of Chatding with image sharing capabilities_
 
 ## Testing
 - Follow Set-up below.
+- Run meme_tk.py
 - Type !meme in twitch chat, followed by a space and the **image location** of an image. When you paste the image location into an internet browser it should take you straight to the image, not a website.
 - Check the images folder within the project folder.
 - Set the source of an image in OBS or Streamlabs OBS to meme.png within the images folder.
