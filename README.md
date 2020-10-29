@@ -18,6 +18,10 @@ _A shameless fork of Chatding with image sharing capabilities_
 - Image viewer for multi monitor streamers
 - Remote clients for moderators(?)
 
+### Unincluded Assets:
+- PIL (Pillow)
+- 
+
 ### Set-up
 
 _Edit file config.py_

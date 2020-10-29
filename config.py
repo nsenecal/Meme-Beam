@@ -1,5 +1,5 @@
 # Your twitch channel preceded by a hash
-CHANNEL = '#generic_channel_name'
+CHANNEL = '#generic'
 
 # Wait x seconds to play alert again on new chat message
 DELAY = 120
