@@ -30,7 +30,15 @@ class Application(tk.Frame):
         super().__init__(master)
         self.master = master
         self.pack()
-        self.create_widgets()
+
+        # Creates buttons and image viewer
+        self.panel = tk.Label()
+        self.yes = tk.Button(self, text="Yes", fg="green", command=self.push)
+        self.yes.pack(side="bottom")
+        self.no = tk.Button(self, text="No", fg="Red", command=self.reject)
+        self.no.pack(side="bottom")
+        self.clear = tk.Button(self, text="Clear", command=self.wipe)
+        self.clear.pack(side="bottom")
 
         thread = threading.Thread(target=self.loop) # Alert Lopp
         thread.daemon = True
@@ -75,7 +83,6 @@ class Application(tk.Frame):
                     lastAlert = time.time()
 
     def push(self): # Image should be written
-
         global current
         global que
 
@@ -104,6 +111,7 @@ class Application(tk.Frame):
         current = False
 
     def update_preview(self, link): # Called every time checker thinks a new image should be previewed
+        global current
         if link == None:
             self.imgLabel = self.panel
             self.imgLabel.configure(image=None)
@@ -112,10 +120,8 @@ class Application(tk.Frame):
         else:
             try:
                 response = requests.get(link).content
-            except: #Bugged
-                global current
-                current = False
-                que.pop(0)
+            except IndexError: #Bugged
+                self.reject()
 
             else:
                 file = open(r"images/staging.png", "wb")
@@ -131,15 +137,6 @@ class Application(tk.Frame):
                 self.imgLabel.configure(image=img)
                 self.imgLabel.image = img
                 self.imgLabel.pack()
-
-    def create_widgets(self): # Creates buttons and image viewer
-        self.panel = tk.Label()
-        self.yes = tk.Button(self, text="Yes", fg="green",command=self.push)
-        self.yes.pack(side="bottom")
-        self.no = tk.Button(self, text="No", fg="Red", command=self.reject)
-        self.no.pack(side="bottom")
-        self.clear = tk.Button(self, text="Clear", command=self.wipe)
-        self.clear.pack(side="bottom")
 
 
 if __name__ == "__main__": #Self explanatory
