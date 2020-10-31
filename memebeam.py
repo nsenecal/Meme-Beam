@@ -5,6 +5,7 @@ from PIL import Image
 import requests
 from io import BytesIO
 import threading
+import asyncio
 
 import socket, time
 from config import DELAY, CHANNEL, ALERT_SOUND, ALERT_RUMBLE, AUTHKEY, INPUT, OUTPUT
@@ -28,22 +29,25 @@ ping = []
 async def on_ready():
     print('Logged on as {0}!'.format(client.user))
 
-    # name = input("Enter a channel name: ")
-    name = INPUT
-    name2 = OUTPUT
     for guild in client.guilds:
         for channels in guild.channels:
             global channel
             global channel2
-            channel = get(guild.channels, name=name, type=discord.ChannelType.text)
-            channel2 = get(guild.channels, name=name2, type=discord.ChannelType.text)
-    await channel.send("Back Online! 💪")
+            channel = get(guild.channels, name=INPUT, type=discord.ChannelType.text).id
+            channel2 = get(guild.channels, name=OUTPUT, type=discord.ChannelType.text).id
+    channel = client.get_channel(channel)
+    channel2 = client.get_channel(channel2)
 
+    print("Back Online! 💪")
+
+
+async def chat():
     while True:
         if len(ping) > 0:
+            global channel2
             await channel2.send(ping[0])
             ping.pop(0)
-
+        await asyncio.sleep(0.01)
 
 @client.event
 async def on_raw_reaction_add(reaction):
@@ -59,7 +63,6 @@ async def on_raw_reaction_add(reaction):
         elif reaction.emoji.name == "❌":
             await msg.delete()
 
-
 @client.event
 async def on_message(message):
     if message.author == client.user:
@@ -69,7 +72,7 @@ async def on_message(message):
             try:
                 await message.attachments[0].save(r"images/staging.gif")
                 await message.delete()
-                oof = await channel2.send(file=discord.File(r"images/staging.gif"))
+                oof = await channel2.send(content = str(message.author), file=discord.File(r"images/staging.gif"))
                 await oof.add_reaction("✅")
                 await oof.add_reaction("❌")
             except IndexError:
@@ -82,6 +85,7 @@ async def on_message(message):
             else:
                 pass
 
+
 def parseChat(resp):
     resp = resp.rstrip().split('\r\n')
     for line in resp:
@@ -90,7 +94,6 @@ def parseChat(resp):
             msg = line.split(':', maxsplit=2)[2]
             line = user + ": " + msg
             ping.append(line)
-        print(line)
 
 
 def loop(self):
@@ -109,6 +112,7 @@ def loop(self):
                 lastAlert = time.time()
 
 
+client.loop.create_task(chat())
 thread = threading.Thread(target=loop, args=(1,))
 thread.start()
 client.run(AUTHKEY)

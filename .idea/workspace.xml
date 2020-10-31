@@ -35,7 +35,7 @@
       <recent name="C:\Users\Neil\Documents\Github\Meme-Beam\deprecated" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.discord_test">
+  <component name="RunManager" selected="Python.memebeam">
     <configuration name="aaaaaaaaaaaaaaaa" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Meme-Beam" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -70,27 +70,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/discord_test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="disposable" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Meme-Beam" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/disposable.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -141,13 +120,34 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="memebeam" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Meme-Beam" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/memebeam.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.memebeam" />
         <item itemvalue="Python.discord_test" />
         <item itemvalue="Python.aaaaaaaaaaaaaaaa" />
         <item itemvalue="Python.meme_tk" />
         <item itemvalue="Python.meme" />
-        <item itemvalue="Python.disposable" />
       </list>
     </recent_temporary>
   </component>
@@ -171,38 +171,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1146" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603996515670" />
-    <state width="1899" height="300" key="GridCell.Tab.0.bottom" timestamp="1604117342037">
+    <state width="936" height="340" key="GridCell.Tab.0.bottom" timestamp="1604130456131">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="300" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604117342037" />
-    <state width="1899" height="300" key="GridCell.Tab.0.center" timestamp="1604117342037">
+    <state width="936" height="340" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604130456131" />
+    <state width="936" height="340" key="GridCell.Tab.0.center" timestamp="1604130456131">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="300" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604117342037" />
-    <state width="1899" height="300" key="GridCell.Tab.0.left" timestamp="1604117342037">
+    <state width="936" height="340" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604130456131" />
+    <state width="936" height="340" key="GridCell.Tab.0.left" timestamp="1604130456131">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="300" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604117342037" />
-    <state width="1899" height="300" key="GridCell.Tab.0.right" timestamp="1604117342037">
+    <state width="936" height="340" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604130456131" />
+    <state width="936" height="340" key="GridCell.Tab.0.right" timestamp="1604130456131">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="300" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604117342037" />
-    <state width="936" height="344" key="GridCell.Tab.1.bottom" timestamp="1604038819937">
+    <state width="936" height="340" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604130456131" />
+    <state width="936" height="340" key="GridCell.Tab.1.bottom" timestamp="1604130456131">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="936" height="344" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604038819937" />
-    <state width="936" height="344" key="GridCell.Tab.1.center" timestamp="1604038819937">
+    <state width="936" height="340" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604130456131" />
+    <state width="936" height="340" key="GridCell.Tab.1.center" timestamp="1604130456131">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="936" height="344" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604038819937" />
-    <state width="936" height="344" key="GridCell.Tab.1.left" timestamp="1604038819937">
+    <state width="936" height="340" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604130456131" />
+    <state width="936" height="340" key="GridCell.Tab.1.left" timestamp="1604130456131">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="936" height="344" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604038819937" />
-    <state width="936" height="344" key="GridCell.Tab.1.right" timestamp="1604038819937">
+    <state width="936" height="340" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604130456131" />
+    <state width="936" height="340" key="GridCell.Tab.1.right" timestamp="1604130456131">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="936" height="344" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604038819937" />
+    <state width="936" height="340" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604130456131" />
     <state x="922" y="165" key="SettingsEditor" timestamp="1604009479201">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

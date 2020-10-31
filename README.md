@@ -11,7 +11,7 @@ Meme-Beam is integrated into discord, where streamers can have a cohesive experi
 Using Discord as a primary platform eliminates the need for desktop, remote, and mobile clients. It's usable on any platform that supports discord, and allows moderators to monitor image submissions from wherever they are.
 
 ## Planned Features
-- None currently
+- Ability to send images to speperate channels for streamers who need more active moderation.
 
 ### Unincluded Assets (Must be manually installed):
 - PIL (Pillow)
@@ -52,5 +52,5 @@ SOUND_FILE = 'sounds/alert.wav'
 - Copy/paste an image from the web or upload an image from your computer in the text channel specified as "INPUT" in config.py.
 - Select the check/x on the image in the channel specified as "OUTPUT."
 - Check the images folder within the project folder.
-- Set the source of an image in OBS or Streamlabs OBS to "meme.png" within the images folder.
+- Set the source of an image in OBS or Streamlabs OBS to "meme.gif" within the images folder.
 - If you want stream notifications in chat, enable that feature using streamlabs cloudbot or your own favorite chatbot.

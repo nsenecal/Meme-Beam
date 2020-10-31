@@ -1,9 +1,9 @@
 # Your twitch channel preceded by a hash
 CHANNEL = '#generic'
-AUTHKEY = '<Auth Key'
+AUTHKEY = '<AUTH KEY.>'
 
-INPUT = '<viewer channel>'
-OUTPUT = '<streamer view>'
+INPUT = 'meme-beam'
+OUTPUT = 'streamer-view'
 
 # Wait x seconds to play alert again on new chat message
 DELAY = 10
