@@ -2,6 +2,10 @@
 
 _A shameless fork of Chatding with image sharing capabilities and Discord integration_
 
+## Credit
+- sheuronazxe: Chatding! source code.
+- evanpurl: Direction and assistance with Discord.py.
+
 ## Description
 
 **Meme-Beam** is a utility designed for streamers with low or no audience alerting the user with an audible alarm when someone writes in the twitch chat. To encourage additional audience interaction, viewers will also be able to send images to the streamer to check and subsequently push to their stream, or delete.
@@ -12,6 +16,7 @@ Using Discord as a primary platform eliminates the need for desktop, remote, and
 
 ## Planned Features
 - Ability to send images to speperate channels for streamers who need more active moderation.
+- Gif support
 
 ### Unincluded Assets (Must be manually installed):
 - PIL (Pillow)
@@ -26,7 +31,7 @@ _Edit file config.py_
 CHANNEL = '#generic'
 
 #Discord App Authentication Key
-AUTHKEY = '<Auth Key'
+AUTHKEY = '<Auth Key>'
 
 #Text channel that viewers submit images in
 INPUT = '<viewer channel>' 
