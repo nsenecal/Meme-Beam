@@ -8,7 +8,7 @@ _A shameless fork of Chatding with image sharing capabilities and Discord integr
 
 Meme-Beam is integrated into discord, where streamers can have a cohesive experience: monitoring submissions, reading chat, and even reading stream notifications with the aid of a third party bot.
 
-Using Discord as a primary platform eliminates the need for desktop, remote, and mobile clients. It's usable on any platform that supports discord, and allows moderators to monitor image submissions from wherever they are/
+Using Discord as a primary platform eliminates the need for desktop, remote, and mobile clients. It's usable on any platform that supports discord, and allows moderators to monitor image submissions from wherever they are.
 
 ## Planned Features
 - None currently
