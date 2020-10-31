@@ -1,5 +1,9 @@
 # Your twitch channel preceded by a hash
 CHANNEL = '#generic'
+AUTHKEY = '<Auth Key'
+
+INPUT = '<viewer channel>'
+OUTPUT = '<streamer view>'
 
 # Wait x seconds to play alert again on new chat message
 DELAY = 10

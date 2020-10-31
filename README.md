@@ -1,27 +1,21 @@
 # Meme-Beam
 
-_A shameless fork of Chatding with image sharing capabilities_
+_A shameless fork of Chatding with image sharing capabilities and Discord integration_
 
-## Preamble
+## Description
 
 **Meme-Beam** is a utility designed for streamers with low or no audience alerting the user with an audible alarm when someone writes in the twitch chat. To encourage additional audience interaction, viewers will also be able to send images to the streamer to check and subsequently push to their stream, or delete.
 
-## Testing
-- Follow Set-up below.
-- Run meme_tk.py
-- Type !meme in twitch chat, followed by a space and the **image location** of an image. When you paste the image location into an internet browser it should take you straight to the image, not a website.
-- Check the images folder within the project folder.
-- Set the source of an image in OBS or Streamlabs OBS to meme.png within the images folder.
+Meme-Beam is integrated into discord, where streamers can have a cohesive experience: monitoring submissions, reading chat, and even reading stream notifications with the aid of a third party bot.
+
+Using Discord as a primary platform eliminates the need for desktop, remote, and mobile clients. It's usable on any platform that supports discord, and allows moderators to monitor image submissions from wherever they are/
 
 ## Planned Features
-- A full gui
-- A passive twitch chat sifter
-- Android client for single monitor streamers
-- Image viewer for multi monitor streamers
-- Remote clients for moderators(?)
+- None currently
 
-### Unincluded Assets:
+### Unincluded Assets (Must be manually installed):
 - PIL (Pillow)
+- Discord.py
 
 ### Set-up
 
@@ -29,10 +23,19 @@ _Edit file config.py_
 
 ```
 # Your twitch channel preceded by a hash
-CHANNEL = '#sheuronazxe'
+CHANNEL = '#generic'
+
+#Discord App Authentication Key
+AUTHKEY = '<Auth Key'
+
+#Text channel that viewers submit images in
+INPUT = '<viewer channel>' 
+
+#Text channel that the streamer monitors
+OUTPUT = '<streamer view>'
 
 # Wait x seconds to play alert again on new chat message
-DELAY = 120
+DELAY = 10
 
 ### Enable (True) / Disable (False) alert modules
 # ALERT_SOUND plays audible alarm on default sound device
@@ -44,8 +47,10 @@ ALERT_RUMBLE = False
 SOUND_FILE = 'sounds/alert.wav'
 ```
 
-### Behavior
-
-**Meme-Beam** plays the alert when it detects a new message in the chat and waits the number of seconds specified in the DELAY variable for a new alert.
-
-If the window is in foreground no sound will be played (this feature only works on Windows platform).
+## Testing
+- Run memebeam.py
+- Copy/paste an image from the web or upload an image from your computer in the text channel specified as "INPUT" in config.py.
+- Select the check/x on the image in the channel specified as "OUTPUT."
+- Check the images folder within the project folder.
+- Set the source of an image in OBS or Streamlabs OBS to "meme.png" within the images folder.
+- If you want stream notifications in chat, enable that feature using streamlabs cloudbot or your own favorite chatbot.
