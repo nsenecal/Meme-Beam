@@ -1,7 +1,7 @@
 from sys import platform
-from config import SOUND_FILE
 
-def alert():
+
+def alert(SOUND_FILE):
 
     if "linux" in platform:
         import os

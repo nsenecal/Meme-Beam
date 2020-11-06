@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:upstream" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="e56ab4f3-df63-4082-9982-c48a285745c9" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,16 +50,21 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/anaconda3/envs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Neil\Documents\Github\Meme-Beam\deprecated" />
+      <recent name="C:\Users\Neil\Documents\Github\Meme-Beam" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Neil\Documents\Github\Meme-Beam" />
+      <recent name="C:\Users\Neil\Documents\Github\Meme-Beam\deprecated" />
     </key>
   </component>
   <component name="RunManager" selected="Python.memebeam">
-    <configuration name="aaaaaaaaaaaaaaaa" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Gif_Test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Meme-Beam" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -48,7 +76,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/aaaaaaaaaaaaaaaa.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Gif_Test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -57,7 +85,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="discord_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="gui" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Meme-Beam" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -69,7 +97,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/discord_test.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\Neil\Documents\Github\Meme-Beam\deprecated\gui.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -78,7 +106,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="meme" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="meme_Flexx" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Meme-Beam" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -86,32 +114,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/deprecated" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/meme.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="meme_tk" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Meme-Beam" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\Neil\Documents\Github\Meme-Beam\deprecated\meme_tk.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/deprecated/meme_Flexx.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -141,13 +148,18 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.Gif_Test" />
+      <item itemvalue="Python.gui" />
+      <item itemvalue="Python.meme_Flexx" />
+      <item itemvalue="Python.memebeam" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.memebeam" />
-        <item itemvalue="Python.discord_test" />
-        <item itemvalue="Python.aaaaaaaaaaaaaaaa" />
-        <item itemvalue="Python.meme_tk" />
-        <item itemvalue="Python.meme" />
+        <item itemvalue="Python.gui" />
+        <item itemvalue="Python.Gif_Test" />
+        <item itemvalue="Python.meme_Flexx" />
       </list>
     </recent_temporary>
   </component>
@@ -162,58 +174,78 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="248" y="325" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603995854835">
+    <state x="155" y="181" width="1092" height="762" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604375236606">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="248" y="325" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1603995854835" />
+    <state x="155" y="181" width="1092" height="762" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604375236606" />
+    <state x="248" y="325" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604462612971">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="248" y="325" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1604462612971" />
+    <state x="430" y="340" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1604164958914">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="430" y="340" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604164958914" />
     <state x="1146" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603996515670">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1146" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603996515670" />
-    <state width="936" height="340" key="GridCell.Tab.0.bottom" timestamp="1604130456131">
+    <state width="1899" height="286" key="GridCell.Tab.0.bottom" timestamp="1604647265571">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="936" height="340" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604130456131" />
-    <state width="936" height="340" key="GridCell.Tab.0.center" timestamp="1604130456131">
+    <state width="1899" height="286" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604647265571" />
+    <state width="1899" height="286" key="GridCell.Tab.0.center" timestamp="1604647265571">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="936" height="340" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604130456131" />
-    <state width="936" height="340" key="GridCell.Tab.0.left" timestamp="1604130456131">
+    <state width="1899" height="286" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604647265571" />
+    <state width="1899" height="286" key="GridCell.Tab.0.left" timestamp="1604647265571">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="936" height="340" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604130456131" />
-    <state width="936" height="340" key="GridCell.Tab.0.right" timestamp="1604130456131">
+    <state width="1899" height="286" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604647265571" />
+    <state width="1899" height="286" key="GridCell.Tab.0.right" timestamp="1604647265571">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="936" height="340" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604130456131" />
-    <state width="936" height="340" key="GridCell.Tab.1.bottom" timestamp="1604130456131">
+    <state width="1899" height="286" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604647265571" />
+    <state width="940" height="343" key="GridCell.Tab.1.bottom" timestamp="1604598601970">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="936" height="340" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604130456131" />
-    <state width="936" height="340" key="GridCell.Tab.1.center" timestamp="1604130456131">
+    <state width="940" height="343" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604598601970" />
+    <state width="940" height="343" key="GridCell.Tab.1.center" timestamp="1604598601969">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="936" height="340" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604130456131" />
-    <state width="936" height="340" key="GridCell.Tab.1.left" timestamp="1604130456131">
+    <state width="940" height="343" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604598601969" />
+    <state width="940" height="343" key="GridCell.Tab.1.left" timestamp="1604598601969">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="936" height="340" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604130456131" />
-    <state width="936" height="340" key="GridCell.Tab.1.right" timestamp="1604130456131">
+    <state width="940" height="343" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604598601969" />
+    <state width="940" height="343" key="GridCell.Tab.1.right" timestamp="1604598601969">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="936" height="340" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604130456131" />
-    <state x="922" y="165" key="SettingsEditor" timestamp="1604009479201">
+    <state width="940" height="343" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604598601969" />
+    <state x="485" y="182" key="SettingsEditor" timestamp="1604647113874">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="922" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1604009479201" />
+    <state x="485" y="182" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1604647113874" />
     <state x="953" y="0" width="974" height="1047" key="dock-window-1" timestamp="1603997697855">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="953" y="0" width="974" height="1047" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1603997697855" />
-    <state x="1103" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1604014957642">
+    <state x="1103" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1604622355438">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1103" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1604014957642" />
+    <state x="1103" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1604622355438" />
   </component>
 </project>

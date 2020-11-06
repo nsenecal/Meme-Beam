@@ -1,5 +1,8 @@
 import ctypes, time
-from config import ALERT_RUMBLE
+import configparser
+config = configparser.ConfigParser()
+config.read('config.ini')
+ALERT_RUMBLE = config['settings']['ALERT_RUMBLE']
 
 # Rumble intensity, number between 0 and 65535.
 FORCE = 32768

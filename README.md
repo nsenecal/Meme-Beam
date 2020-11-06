@@ -15,47 +15,41 @@ Meme-Beam is integrated into discord, where streamers can have a cohesive experi
 Using Discord as a primary platform eliminates the need for desktop, remote, and mobile clients. It's usable on any platform that supports discord, and allows moderators to monitor image submissions from wherever they are.
 
 ## Planned Features
-- Ability to send images to speperate channels for streamers who need more active moderation.
+- Ability to send images to seperate channels for streamers who need more active moderation.
 - Gif support
 
 ### Unincluded Assets (Must be manually installed):
 - PIL (Pillow)
 - Discord.py
+- Requests
 
 ### Set-up
 
-_Edit file config.py_
+_Edit file config.ini_
 
 ```
-# Your twitch channel preceded by a hash
-CHANNEL = '#generic'
-
-#Discord App Authentication Key
-AUTHKEY = '<Auth Key>'
-
-#Text channel that viewers submit images in
-INPUT = '<viewer channel>' 
-
-#Text channel that the streamer monitors
-OUTPUT = '<streamer view>'
-
-# Wait x seconds to play alert again on new chat message
-DELAY = 10
-
-### Enable (True) / Disable (False) alert modules
-# ALERT_SOUND plays audible alarm on default sound device
-# ALERT_RUMBLE activate rumble on XBOX compatible controller, more settings in rumble.py
-ALERT_SOUND = True
-ALERT_RUMBLE = False
-
-# Alert sound file in WAV format
-SOUND_FILE = 'sounds/alert.wav'
+[settings]
+input = <discord channel>
+output = <discord channel>
+channel = <twitch channel>
+authkey = <discord app auth>
+delay = <time in seconds>
+width = <lock image to width>
+sound_file = <path to .wav>
+alert_sound = True
+image_sound = <path to .wav>
+alert_image = True
+alert_rumble = True
+chat_enabled = True
+init = True
 ```
 
 ## Testing
 - Run memebeam.py
 - Copy/paste an image from the web or upload an image from your computer in the text channel specified as "INPUT" in config.py.
-- Select the check/x on the image in the channel specified as "OUTPUT."
+- Select the check/x on the image in the channel specified as "output."
 - Check the images folder within the project folder.
 - Set the source of an image in OBS or Streamlabs OBS to "meme.gif" within the images folder.
 - If you want stream notifications in chat, enable that feature using streamlabs cloudbot or your own favorite chatbot.
+- Type !Clear into the streamer channel to delete the current image
+- Type !Settings into the streamer channel to activate the gui.
