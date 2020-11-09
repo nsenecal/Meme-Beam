@@ -9,6 +9,7 @@ import asyncio
 import os
 import configparser
 import tkinter as tk
+from tkinter import messagebox
 from tkinter import filedialog
 
 import socket, time
@@ -49,15 +50,14 @@ sock.send(f"JOIN {'#' + CHANNEL}\n".encode('utf-8'))
 lastAlert = 0
 channel = None
 channel2 = None
-client = discord.Client()
-
 ping = []
 
+client = discord.Client()
 
 class Gui:
     def __init__(self, master=None):
         self.master = master
-        master.title("Meme-Beam Settings")
+        master.title("Meme-Beam Settings [Bot Offline]")
         master.resizable(False, False)
         master.iconbitmap(r"images/lazer.ico")
 
@@ -180,36 +180,37 @@ class Gui:
         apply = tk.Button(master, text="Apply All Changes", command=save)
         apply.grid(row=10, column=4)
 
-
 @client.event
 async def on_ready():
     print('Logged on as {0}!'.format(client.user))
 
-    for guild in client.guilds:
-        for channels in guild.channels:
-            global channel
-            global channel2
-            channel = get(guild.channels, name=INPUT, type=discord.ChannelType.text).id
-            channel2 = get(guild.channels, name=OUTPUT, type=discord.ChannelType.text).id
-    channel = client.get_channel(channel)
-    channel2 = client.get_channel(channel2)
-
-    print("Back Online! 💪")
+    try:
+        for guild in client.guilds:
+            for channels in guild.channels:
+                global channel
+                global channel2
+                channel = get(guild.channels, name=INPUT, type=discord.ChannelType.text).id
+                channel2 = get(guild.channels, name=OUTPUT, type=discord.ChannelType.text).id
+        channel = client.get_channel(channel)
+        channel2 = client.get_channel(channel2)
+    except AttributeError:
+        await client.logout()
+        print("Bot Offline")
+        root.title("Meme-Beam Settings [Settings Error]")
+    else:
+        print("Back Online! 💪")
+        root.title("Meme-Beam Settings [Bot Online]")
 
 
 async def chat():
     while True:
-
         if len(ping) > 0:
             global channel2
             try:
                 await channel2.send(ping[0])
                 ping.pop(0)
-            except:
-                pass
-            else:
-                pass
-
+            except: pass
+            else: pass
         await asyncio.sleep(0.01)
 
 
@@ -253,8 +254,7 @@ async def on_message(message):
             if message.content == "!Clear":
                 os.remove(r"images/meme.gif")
             elif message.content == "!settings":
-                thread2 = threading.Thread(target=run)
-                thread2.start()
+                pass
 
 
 def parseChat(resp):
@@ -283,14 +283,24 @@ def loop():
                 lastAlert = time.time()
 
 
+def abandon():
+    if messagebox.askokcancel("Quit", "Do you want to quit?"):
+        os._exit(0)
+
+
 def run():
-    root = tk.Tk()
-    Gui(root)
-    root.mainloop()
+    client.run(AUTHKEY)
 
 
 client.loop.create_task(chat())
+thread2 = threading.Thread(target=run)
+thread2.start()
 thread = threading.Thread(target=loop)
 thread.start()
 
-client.run(AUTHKEY)
+
+root = tk.Tk()
+Gui(root)
+root.protocol("WM_DELETE_WINDOW", abandon)
+root.mainloop()
+

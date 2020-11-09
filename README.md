@@ -15,7 +15,7 @@ Meme-Beam is integrated into discord, where streamers can have a cohesive experi
 Using Discord as a primary platform eliminates the need for desktop, remote, and mobile clients. It's usable on any platform that supports discord, and allows moderators to monitor image submissions from wherever they are.
 
 ## Planned Features
-- Ability to send images to seperate channels for streamers who need more active moderation.
+- Ability to send images to separate channels for streamers who need more active moderation.
 - Gif support
 
 ### Unincluded Assets (Must be manually installed):
