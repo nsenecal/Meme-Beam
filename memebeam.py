@@ -17,42 +17,56 @@ from alerts import sound, rumble
 from common import window
 
 config = configparser.ConfigParser()
+sock = socket.socket()
+sock.connect(('irc.chat.twitch.tv', 6667))
+sock.send(f"NICK justinfan0\n".encode('utf-8'))
+client = discord.Client()
 
 
 def update():
     config.read('config.ini')
 
-    global CHANNEL, AUTHKEY, INPUT, OUTPUT, DELAY, SOUND_FILE, ALERT_SOUND, WIDTH, ALERT_RUMBLE, ALERT_IMAGE, IMAGE_SOUND, INIT, CHAT_ENABLED
+    global CHANNEL, AUTHKEY, INPUT, OUTPUT, DELAY, SOUND_FILE, ALERT_SOUND, WIDTH, ALERT_RUMBLE, ALERT_IMAGE, IMAGE_SOUND, CHAT_ENABLED
 
-    CHANNEL = config['settings']['CHANNEL']  # Twitch Channel
     AUTHKEY = config['settings']['AUTHKEY']  # Discord App Auth
     INPUT = config['settings']['INPUT']  # Viewer Discord Channel
     OUTPUT = config['settings']['OUTPUT']  # Streamer Discord Channel
-    DELAY = int(config['settings']['DELAY'])  # Delay in seconds
-    SOUND_FILE = config['settings']['SOUND_FILE']  # Path the chat alert
-    ALERT_SOUND = config['settings']['ALERT_SOUND']  # Enable/Disable Chat Notifications
-    WIDTH = int(config['settings']['WIDTH'])  # scaled width of image
-    ALERT_RUMBLE = config['settings']['ALERT_RUMBLE']  # rumble
 
-    ALERT_IMAGE = config['settings']['ALERT_IMAGE']  # Path to image alert
+    try:
+        int(config['settings']['DELAY'])
+    except ValueError:
+        DELAY = 10
+    else:
+        DELAY = int(config['settings']['DELAY'])  # Delay in seconds
+
+    try:
+        int(config['settings']['WIDTH'])
+    except ValueError:
+        WIDTH = 200
+    else:
+        WIDTH = int(config['settings']['WIDTH'])  # scaled width of image
+
+    SOUND_FILE = config['settings']['SOUND_FILE']  # Path the chat alert
+    CHANNEL = config['settings']['CHANNEL']  # Twitch Channel
     IMAGE_SOUND = config['settings']['IMAGE_SOUND']  # Path to image alert
-    INIT = config['settings']['INIT']  # Run on startup
     CHAT_ENABLED = config['settings']['CHAT_ENABLED']  # Enable/Disable Chat
+    ALERT_SOUND = config['settings']['ALERT_SOUND']  # Enable/Disable Chat Notifications
+    ALERT_RUMBLE = config['settings']['ALERT_RUMBLE']  # rumble
+    ALERT_IMAGE = config['settings']['ALERT_IMAGE']  # Enable/Disable Image Notifications
+
+    sock.send(f"JOIN {'#' + CHANNEL}\n".encode('utf-8'))
+    global pook
+    pook = True
 
 
 update()
 
-sock = socket.socket()
-sock.connect(('irc.chat.twitch.tv', 6667))
-sock.send(f"NICK justinfan0\n".encode('utf-8'))
-sock.send(f"JOIN {'#' + CHANNEL}\n".encode('utf-8'))
 
 lastAlert = 0
 channel = None
 channel2 = None
 ping = []
 
-client = discord.Client()
 
 class Gui:
     def __init__(self, master=None):
@@ -74,17 +88,16 @@ class Gui:
         SOUND_FILE = config['settings']['SOUND_FILE']
         IMAGE_SOUND = config['settings']['IMAGE_SOUND']
         WIDTH = config['settings']['WIDTH']
-        INIT = config['settings']['INIT']
         CHAT_ENABLED = config['settings']['CHAT_ENABLED']
 
         def chatfile():
-            self.master.filename = filedialog.askopenfilename(initialdir="/", title="Select file")
+            self.master.filename = filedialog.askopenfilename(initialdir=os.getcwd(), title="Select file", filetypes=[("Wav files","*.wav")])
             sound2.delete(0, 'end')
             sound2.insert(1, self.master.filename)
             sound2.xview('end')
 
         def imgfile():
-            self.master.filename = filedialog.askopenfilename(initialdir="/", title="Select file")
+            self.master.filename = filedialog.askopenfilename(initialdir=os.getcwd(), title="Select file", filetypes=[("Wav files","*.wav")])
             alt2.delete(0, 'end')
             alt2.insert(1, self.master.filename)
             alt2.xview('end')
@@ -101,14 +114,13 @@ class Gui:
             config['settings']['SOUND_FILE'] = sound2.get()
             config['settings']['IMAGE_SOUND'] = alt2.get()
             config['settings']['WIDTH'] = width2.get()
-            config['settings']['INIT'] = startup.var.get()
             config['settings']['CHAT_ENABLED'] = chat.var.get()
             with open('config.ini', 'w') as configfile:
                 config.write(configfile)
             update()
 
-        input = tk.Label(master, text="Viewer Channel:")
-        input.grid(row=1, column=1)
+        input1 = tk.Label(master, text="Viewer Channel:")
+        input1.grid(row=1, column=1)
         input2 = tk.Entry(master)
         input2.grid(row=1, column=2)
         input2.insert(0, INPUT)
@@ -173,12 +185,13 @@ class Gui:
         chat.var = tk.StringVar(value=CHAT_ENABLED)
         chat.config(var=chat.var)
         chat.grid(row=10, column=2)
-        startup = tk.Checkbutton(master, text="Run on Startup", onvalue="True", offvalue="False")
-        startup.grid(row=10, column=3)
-        startup.var = tk.StringVar(value=INIT)
-        startup.config(var=startup.var)
+        #startup = tk.Checkbutton(master, text="Run on Startup", onvalue="True", offvalue="False")
+        #startup.grid(row=10, column=3)
+        #startup.var = tk.StringVar(value=INIT)
+        #startup.config(var=startup.var)
         apply = tk.Button(master, text="Apply All Changes", command=save)
         apply.grid(row=10, column=4)
+
 
 @client.event
 async def on_ready():
@@ -201,16 +214,21 @@ async def on_ready():
         print("Back Online! 💪")
         root.title("Meme-Beam Settings [Bot Online]")
 
+pook = False
 
 async def chat():
     while True:
+        if pook is True:
+            await client.logout()
         if len(ping) > 0:
             global channel2
             try:
                 await channel2.send(ping[0])
                 ping.pop(0)
-            except: pass
-            else: pass
+            except:
+                pass
+            else:
+                pass
         await asyncio.sleep(0.01)
 
 
@@ -269,6 +287,7 @@ def parseChat(resp):
 
 def loop():
     while True:
+
         global lastAlert
         resp = sock.recv(2048).decode('utf-8')
 
@@ -289,15 +308,19 @@ def abandon():
 
 
 def run():
-    client.run(AUTHKEY)
+    try:
+        client.run(AUTHKEY)
+    except discord.errors.LoginFailure:
+        print("Invalid Auth Key")
+    else:
+        pass
 
 
 client.loop.create_task(chat())
-thread2 = threading.Thread(target=run)
-thread2.start()
 thread = threading.Thread(target=loop)
+thread2 = threading.Thread(target=run)
 thread.start()
-
+thread2.start()
 
 root = tk.Tk()
 Gui(root)
